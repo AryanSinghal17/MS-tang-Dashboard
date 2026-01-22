@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- VARIABLES --- */
+.web-dashboard {
+  --bg-dark: #0f1115;
+  --bg-card: #181b21;
+  --primary-red: #E60012;
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --border-color: #2d333b;
+  
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  margin-left: 0;
+  flex: 1;
+  padding: 30px;
+  max-width: 100%;
+}
+
+/* HEADER */
+.top-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+.header-title h1 { margin: 0; font-size: 1.8rem; font-weight: 700; }
+.header-title p { color: var(--text-muted); margin: 5px 0 0 0; font-size: 0.9rem; }
+.header-actions { display: flex; gap: 20px; align-items: center; }
+
+/* GRID SYSTEM */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* --- ACTION CARD STYLES --- */
+.action-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.quick-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #888;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon { font-size: 1.2rem; }
+
+/* LOCK BUTTON (Cyan/Blue) */
+.lock-btn:hover { border-color: #00d2ff; color: white; }
+.lock-btn.active { background: #00d2ff; color: #000; border-color: #00d2ff; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
+
+/* ENGINE BUTTON (Red) */
+.engine-btn:hover { border-color: #ff003c; color: white; }
+.engine-btn.active { background: #ff003c; color: white; border-color: #ff003c; box-shadow: 0 0 15px rgba(255, 0, 60, 0.4); }
+
+/* LIGHTS BUTTON (Yellow) */
+.light-btn:hover { border-color: #fcee0a; color: white; }
+.light-btn.active { background: #fcee0a; color: black; border-color: #fcee0a; box-shadow: 0 0 15px rgba(252, 238, 10, 0.4); }
+
+/* --- EXISTING CARDS --- */
+.stat-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; display: flex; align-items: flex-start; gap: 15px; }
+.stat-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.red-bg { background: rgba(230, 0, 18, 0.15); }
+.dark-bg { background: #222; }
+.stat-info { display: flex; flex-direction: column; }
+.stat-info .label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; }
+.stat-info .value { font-size: 1.6rem; font-weight: 700; color: white; }
+.stat-info .trend { font-size: 0.75rem; color: var(--text-muted); margin-top: 5px; }
+.stat-info .trend.up { color: #00ff88; }
+.stat-info .trend.ok { color: #00ff88; }
+
+.card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.card-header h3 { margin: 0; font-size: 1.1rem; }
+
+.large-chart-card { grid-column: span 3; }
+.chart-select { background: #111; color: white; border: 1px solid #333; padding: 5px 10px; border-radius: 6px; }
+.css-chart-container { height: 250px; display: flex; flex-direction: column; justify-content: flex-end; }
+.chart-bars { display: flex; justify-content: space-between; align-items: flex-end; height: 220px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+.bar { width: 12%; background: #2d333b; border-radius: 4px 4px 0 0; transition: height 0.5s ease; }
+.bar.active { background: var(--primary-red); box-shadow: 0 0 15px rgba(230, 0, 18, 0.3); }
+.chart-labels { display: flex; justify-content: space-between; margin-top: 10px; color: var(--text-muted); font-size: 0.85rem; }
+
+.car-status-card { grid-column: span 1; display: flex; flex-direction: column; }
+.status-badge { background: rgba(0,255,136,0.1); color: #00ff88; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+.car-image-container { position: relative; height: 180px; margin-bottom: 20px; border-radius: 12px; overflow: hidden; }
+.car-image-container img { width: 100%; height: 100%; object-fit: cover; }
+.overlay-gradient { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
+.lock-overlay { position: absolute; top: 10px; right: 10px; font-size: 2rem; }
+.car-details { position: absolute; bottom: 15px; left: 15px; }
+.car-details h4 { margin: 0; color: white; }
+.car-details p { margin: 0; color: #aaa; font-size: 0.75rem; }
+.health-item { margin-bottom: 15px; }
+.health-item span { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+.progress { width: 100%; height: 6px; background: #222; border-radius: 3px; }
+.fill { height: 100%; background: #00ff88; border-radius: 3px; }
+.fill.warning { background: #ffaa00; }
+
+.table-card { grid-column: span 4; }
+.view-all { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); padding: 5px 12px; border-radius: 6px; cursor: pointer; }
+.dashboard-table { width: 100%; border-collapse: collapse; }
+.dashboard-table th { text-align: left; color: var(--text-muted); font-size: 0.85rem; padding-bottom: 15px; font-weight: 500; }
+.dashboard-table td { padding: 15px 0; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+.tag { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+.tag.complete { background: rgba(0,255,136,0.1); color: #00ff88; }
+.tag.track { background: rgba(230,0,18,0.1); color: var(--primary-red); }
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .large-chart-card { grid-column: span 2; }
+  .car-status-card { grid-column: span 2; }
+  .table-card { grid-column: span 2; }
+}

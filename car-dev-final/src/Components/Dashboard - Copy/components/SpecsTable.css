@@ -1,0 +1,40 @@
+.specs-container {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.specs-header {
+  color: var(--primary-red);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  border-left: 3px solid var(--primary-red);
+  padding-left: 10px;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table td {
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--text-muted);
+  width: 40%;
+}
+
+.spec-value {
+  color: var(--text-main);
+  font-weight: 600;
+  text-align: right;
+}
